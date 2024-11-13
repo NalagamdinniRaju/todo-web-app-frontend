@@ -1,0 +1,373 @@
+
+/* Navbar Stats Button */
+.navbar {
+    background: #ffffff;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  
+  .navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .navbar-brand a {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar-brand a:hover {
+    color: #2196f3;
+  }
+  
+  .navbar-menu {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+  
+  .navbar-menu a {
+    text-decoration: none;
+    color: #666;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar-menu a:hover {
+    color: #2196f3;
+  }
+  
+  .logout-btn {
+    background: #f44336;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
+.navbar-stats {
+    display: flex;
+    align-items: center;
+  }
+  
+  .stats-button {
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 20px;
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .stats-button:hover {
+    background: #f5f5f5;
+  }
+  
+  .stats-indicator {
+    display: flex;
+    gap: 4px;
+  }
+  
+  .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+  }
+  
+  .dot.pending { background-color: #ff9800; }
+  .dot.in-progress { background-color: #2196f3; }
+  .dot.completed { background-color: #4caf50; }
+  
+  /* Sidebar Overlay */
+  .sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 1000;
+  }
+  
+  .sidebar-overlay.active {
+    display: block;
+  }
+  
+  /* Sidebar */
+  .sidebar {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    width: 300px;
+    border-radius: 30px;
+    height: 60%;
+    background: white;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    animation: slideIn 0.3s ease-out;
+    z-index: 1000000;
+  }
+  
+  @keyframes slideIn {
+    from { transform: translateX(100%); }
+    to { transform: translateX(0); }
+  }
+  
+  .sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .close-button {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #666;
+  }
+  
+  .close-button:hover {
+    color: #333;
+  }
+  
+  /* Stat Items in Sidebar */
+  .sidebar-content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .stat-item {
+    padding: 15px;
+    border-radius: 8px;
+    background: #f5f5f5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .stat-item.total { border-left: 4px solid #2196f3; }
+  .stat-item.pending { border-left: 4px solid #ff9800; }
+  .stat-item.in-progress { border-left: 4px solid #2196f3; }
+  .stat-item.completed { border-left: 4px solid #4caf50; }
+  
+  .stat-label {
+    font-weight: 500;
+    color: #666;
+  }
+  
+  .stat-value {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+
+    
+    .navbar {
+      padding: 1rem;
+    }
+  
+    .stats-button {
+      padding: 6px 12px;
+      font-size: 0.9rem;
+    }
+  
+    .navbar-menu {
+      gap: 1rem;
+    }
+  }
+
+
+   .nav-profile-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    padding: 6px 12px;
+    border-radius: 6px;
+    transition: background-color 0.2s;
+  }
+  
+  .nav-profile-container:hover {
+    background-color: #f5f5f5;
+  }
+  
+  .nav-profile-photo {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border: 2px solid #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .nav-profile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .nav-default-avatar {
+    font-size: 18px;
+    color: #666;
+  }
+  
+
+  /* Responsive styles for medium devices (tablets, 768px and up) */
+@media (max-width: 992px) {
+  .todo-container {
+    max-width: 720px;
+    padding: 16px;
+  }
+
+  .todo-form-container {
+    padding: 16px;
+  }
+
+  .todo-form {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .form-group {
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .form-group label {
+    white-space: nowrap;
+  }
+
+  #todo-form-input {
+    width: 100%;
+  }
+
+  #todo-form-button {
+    width: auto;
+    padding: 10px 20px;
+  }
+
+  .todo-list {
+    gap: 12px;
+  }
+
+  .todo-item {
+    padding: 16px;
+  }
+
+  .todo-content h3 {
+    font-size: 1.125rem;
+  }
+
+  .todo-edit-container input {
+    font-size: 0.9375rem;
+  }
+
+  .status-container select {
+    font-size: 0.8125rem;
+  }
+
+  .status {
+    font-size: 0.8125rem;
+  }
+
+  .todo-actions button {
+    padding: 6px;
+  }
+
+  .todo-actions button svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+/* Responsive styles for small devices (mobile, 576px and down) */
+@media (max-width: 576px) {
+  .todo-container {
+    max-width: 100%;
+    padding: 12px;
+  }
+
+  .todo-form-container {
+    padding: 12px;
+  }
+
+  .todo-form {
+    gap: 12px;
+  }
+
+  .form-group {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .form-group label {
+    font-size: 0.875rem;
+  }
+
+  input[type="text"],
+  select {
+    font-size: 0.9375rem;
+  }
+
+  #todo-form-button {
+    padding: 8px 16px;
+  }
+
+  .todo-list {
+    gap: 8px;
+  }
+
+  .todo-item {
+    padding: 12px;
+  }
+
+  .todo-content h3 {
+    font-size: 1rem;
+  }
+
+  .todo-edit-container input {
+    font-size: 0.875rem;
+  }
+
+  .status-container select {
+    font-size: 0.75rem;
+  }
+
+  .status {
+    font-size: 0.75rem;
+  }
+
+  .todo-actions button {
+    padding: 4px;
+  }
+
+  .todo-actions button svg {
+    width: 14px;
+    height: 14px;
+  }
+}

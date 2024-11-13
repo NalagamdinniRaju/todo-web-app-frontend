@@ -1,0 +1,630 @@
+/* todo.css */
+
+/* Container styles */
+.todo-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+  }
+  
+  /* Fixed form container */
+  .todo-form-container {
+    position: sticky;
+    top: 0;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    display: flex;
+
+  }
+  
+
+  .form-icon {
+    color: #3498db;
+  }
+  
+  /* Form styles */
+  #todo-form {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .form-group label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+    color: #34495e;
+  }
+  
+  .input-icon {
+    color: #3498db;
+  }
+  
+  /* Input styles */
+  input[type="text"],
+  textarea,
+  select {
+    padding: 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+  }
+  
+  input[type="text"]:focus,
+  textarea:focus,
+  select:focus {
+    border-color: #3498db;
+    outline: none;
+  }
+
+
+  /* Error styles */
+  .error input,
+  .error textarea {
+    border-color: #e74c3c;
+  }
+  
+  .error-message {
+    color: #e74c3c;
+    font-size: 0.875rem;
+    margin-top: 4px;
+  }
+  
+  /* Button styles */
+  #todo-form-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    width: 150px;
+    transition: all 0.3s ease;
+    margin-top: 55px;
+  }
+  
+  button[type="submit"] {
+    background-color: #3498db;
+    color: white;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #2980b9;
+  }
+  
+  button[type="submit"]:disabled {
+    background-color: #bdc3c7;
+    cursor: not-allowed;
+  }
+  
+  /* Todo list styles */
+  .todo-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 30px;
+  }
+  
+ 
+.todo-item {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.3s ease;
+  }
+  
+  .todo-item:hover {
+    transform: translateY(-2px);
+  }
+  
+  .todo-content {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-right: 10px;
+  }
+  
+  .todo-content h3 {
+    margin: 0 0 8px 0;
+    color: #2c3e50;
+  }
+  
+  .todo-edit-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  
+  .todo-edit-container input {
+    flex: 1;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+  
+  .status-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .status-container select {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    background-color: #f8f9fa;
+  }
+  
+  .status {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-transform: capitalize;
+  }
+  
+  .todo-actions {
+    display: flex;
+    gap: 8px;
+  }
+  
+  
+  .todo-actions button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    background-color: transparent;
+    color: #34495e;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .todo-actions button:hover {
+    background-color: #cfede9;
+  }
+  .todo-actions button.delete-btn:hover {
+    background-color: rgb(244, 166, 166);
+  }
+  
+  .todo-actions button svg {
+    width: 18px;
+    height: 18px;
+  }
+  
+  .status-pending {
+    border-left: 4px solid #f1c40f;
+  }
+  
+  .status-pending .status {
+    background-color: #ffeaa7;
+    color: #b7791f;
+  }
+  
+  .status-in-progress {
+    border-left: 4px solid #3498db;
+  }
+  
+  .status-in-progress .status {
+    background-color: #9890e9;
+    color: #f9fcff;
+  }
+  
+  .status-completed {
+    border-left: 4px solid #2ecc71;
+  }
+  
+  .status-completed .status {
+    background-color: #c6f6d5;
+    color: #2f855a;
+  }
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #c0c0c0;
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #a0a0a0;
+  }
+
+  .loading-spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+  }
+  
+  .profile-container .loading-spinner .Oval {
+    color: #3498db;
+  }
+
+  
+
+  /* todo.css */
+
+/* Container styles */
+.todo-form-container {
+    max-width: 900px;
+    margin:  auto;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    
+  }
+  
+  #todo-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    align-items: start;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 5px;
+    margin-right: 0;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .form-group label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+    color: #34495e;
+  }
+  
+  .input-icon {
+    color: #3498db;
+  }
+  
+  /* Input styles */
+  input[type="text"],
+  select {
+    padding: 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+  }
+  
+  input[type="text"]:focus,
+  select:focus {
+    border-color: #3498db;
+    outline: none;
+  }
+  
+  .error input[type="text"] {
+    border-color: #e74c3c;
+  }
+  
+  .error-message {
+    color: #e74c3c;
+    font-size: 0.875rem;
+    margin-top: 4px;
+  }
+  
+
+
+  
+  .spinner {
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .todo-form-container {
+      padding: 16px;
+    }
+  
+    .todo-form {
+      grid-template-columns: 1fr;
+    }
+  
+    button {
+      grid-column: 1 / 2;
+    }
+  }
+
+  #todo-form-input {
+    width: 300px;
+    
+  }
+  
+
+
+  /* Base styles */
+.todo-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  position: relative;
+}
+
+/* Form container and styles */
+.todo-form-container {
+  position: sticky;
+  top: 0;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+  display: flex;
+  max-width: 900px;
+}
+
+.todo-form {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  width: 100%;
+}
+
+/* Form elements */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+#todo-form-input {
+  width: 300px;
+}
+
+/* Input styles */
+input[type="text"],
+textarea,
+select {
+  padding: 12px;
+  border: 2px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+/* Todo items */
+.todo-item {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.todo-content {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-right: 10px;
+}
+
+/* Medium devices (tablets, 768px to 992px) */
+@media (max-width: 992px) {
+  .todo-container {
+      max-width: 95%;
+      padding: 15px;
+  }
+
+  .todo-form-container {
+      padding: 15px;
+      margin-bottom: 20px;
+  }
+
+  .todo-form {
+      flex-direction: column;
+      gap: 15px;
+  }
+
+  #todo-form-input {
+      width: 100%;
+  }
+
+  #todo-form-button {
+      width: 100%;
+      max-width: 200px;
+      align-self: flex-end;
+  }
+
+  .todo-content {
+      flex-direction: column;
+      gap: 10px;
+  }
+
+  .todo-edit-container {
+      flex-direction: column;
+      gap: 10px;
+  }
+
+  .status-container {
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+  }
+}
+
+/* Small devices (mobile phones, 576px and below) */
+@media (max-width: 576px) {
+  #todo-form-button {
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+  .todo-container {
+      max-width: 100%;
+      padding: 10px;
+  }
+
+  .todo-form-container {
+      padding: 10px;
+      margin-bottom: 15px;
+  }
+
+  .todo-form {
+      gap: 12px;
+  }
+
+  .form-group {
+      width: 100%;
+  }
+
+  .form-group label {
+      font-size: 0.9rem;
+  }
+
+  input[type="text"],
+  textarea,
+  select {
+      padding: 10px;
+      font-size: 0.9rem;
+  }
+
+  #todo-form-button {
+      padding: 10px 20px;
+      font-size: 0.9rem;
+  }
+
+  .todo-item {
+      padding: 15px;
+      flex-direction: column;
+      gap: 15px;
+  }
+
+  .todo-content {
+      width: 100%;
+      padding-right: 0;
+  }
+
+  .todo-content h3 {
+      font-size: 1rem;
+      margin-bottom: 5px;
+  }
+
+  .todo-actions {
+      width: 100%;
+      justify-content: flex-end;
+  }
+
+  .todo-actions button {
+      padding: 6px;
+  }
+
+  .todo-actions button svg {
+      width: 16px;
+      height: 16px;
+  }
+
+  .status {
+      padding: 3px 10px;
+      font-size: 0.8rem;
+  }
+
+  .todo-edit-container input {
+      width: 100%;
+      padding: 8px;
+      font-size: 0.9rem;
+  }
+
+  .status-container select {
+      padding: 8px;
+      font-size: 0.8rem;
+  }
+}
+
+/* Additional responsive adjustments for better UX */
+@media (max-width: 400px) {
+  
+  .todo-form-container {
+      padding: 8px;
+  }
+
+  .todo-item {
+      padding: 12px;
+  }
+
+  .todo-actions {
+      gap: 5px;
+  }
+
+  .todo-actions button {
+      padding: 5px;
+      
+  }
+
+  .todo-actions button svg {
+      width: 14px;
+      height: 14px;
+  }
+
+  .status {
+      padding: 2px 8px;
+      font-size: 0.75rem;
+  }
+}
+
+/* Maintain scrollbar styles across devices */
+@media (hover: none) {
+  ::-webkit-scrollbar {
+      width: 5px;
+  }
+}
+
+/* Loading spinner responsive adjustments */
+@media (max-width: 768px) {
+  .loading-spinner {
+      height: 200px;
+  }
+}
