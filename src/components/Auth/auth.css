@@ -390,3 +390,23 @@ body, input {
     padding: 1rem 2rem 1.5rem;
   }
 }
+
+.link-button {
+  background: none;
+  border: none;
+  padding: 0;
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
+  font: inherit;
+}
+
+.toggle {
+  background: none;
+  border: none;
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
+  font: inherit;
+  padding: 0;
+}
